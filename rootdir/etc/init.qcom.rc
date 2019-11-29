@@ -1200,6 +1200,11 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     user system
     group nfc
 
+service kernel_loggy /system/bin/sh /kernel_loggy.sh
+    class main
+    user root
+    oneshot
+
 on charger
     setprop persist.sys.usb.config mass_storage
     load_system_props
